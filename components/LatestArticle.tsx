@@ -6,8 +6,8 @@ const LatestArticleCard: React.FC<ArticleProps> = ({ article }) => {
 
   if (isSmallCard) {
     return (
-      <div className="latest-article-card flex bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-40">
-        <div className="w-1/3 shrink-0">
+      <div className="latest-article-card flex flex-1 bg-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer overflow-hidden transform">
+        <div className="w-1/3">
           <img 
             src={imageUrl} 
             alt={title} 
@@ -29,8 +29,8 @@ const LatestArticleCard: React.FC<ArticleProps> = ({ article }) => {
     );
   }
   
-  return (
-    <div className="latest-article-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer overflow-hidden">
+  else return (
+    <div className="latest-article-card bg-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer overflow-hidden transform">
       <img 
         src={imageUrl} 
         alt={title} 

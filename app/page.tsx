@@ -44,7 +44,7 @@ const Page = () => {
     // Staggered animation for all latest articles
     gsap.fromTo(".latest-article-card", 
       { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, delay: 1.3, ease: "power2.out" }
+      { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, delay: 1.3, ease: "power2.out", onComplete: () => { gsap.set(".latest-article-card", { clearProps: "transform" }); } }
     );
 
   }, { scope: mainRef });
@@ -78,12 +78,12 @@ const Page = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               
             {/* 1. Main Article Content (2/3 width on desktop) */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 grid gap-8">
                 
               {/* Row 1 (Large + Two Small) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <LatestArticleCard article={articleMap.col1[0]} /> 
-                <div className="space-y-8">
+                <div className="flex flex-col gap-8 h-full">
                   {articleMap.col2_row1.map(article => (
                     <LatestArticleCard key={article.id} article={article} />
                   ))}
@@ -92,7 +92,7 @@ const Page = () => {
 
               {/* Row 2 (Large + Two Small) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-8">
+                <div className="flex flex-col gap-8 h-full">
                   {articleMap.col2_row2.map(article => (
                     <LatestArticleCard key={article.id} article={article} />
                   ))}

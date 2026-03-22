@@ -39,7 +39,7 @@ const FeaturedArticleCard: React.FC<ArticleProps> = ({ article }) => {
   }, { scope: cardRef, dependencies: [id] });
   
   return (
-    <div className="relative h-90 w-full rounded-xl overflow-hidden shadow-xl group cursor-pointer" ref={cardRef}>
+    <div className="relative h-90 w-full rounded-xl overflow-hidden shadow-xl group" ref={cardRef}>
       <Image 
         src={imageUrl} 
         alt={title} 
@@ -58,7 +58,7 @@ const FeaturedArticleCard: React.FC<ArticleProps> = ({ article }) => {
         </span>
         <h3 className="text-xl font-bold text-white mb-2 line-clamp-2">{title}</h3>
         <p className="text-sm text-gray-300 line-clamp-2">{excerpt}</p>
-        <button className="mt-4 w-32 px-4 py-2 bg-white text-gray-800 text-sm font-semibold rounded-full hover:bg-gray-200 transition duration-150">
+        <button className="mt-4 w-32 px-4 py-2 bg-white text-gray-800 text-sm font-semibold rounded-full hover:bg-gray-200 transition duration-150 cursor-pointer">
           READ MORE
         </button>
       </div>

@@ -60,7 +60,7 @@ export const latestArticles: Article[] = [
     author: 'By Alex Chloe', 
     date: 'Mar 13, 2024', 
     readTime: '5-min read', 
-    imageUrl: 'https://placehold.co/600x400/14B8A6/ffffff?text=AI+Tech' 
+    imageUrl: '/images/ai.jpg' 
   },
   { 
     id: 5, 
@@ -71,7 +71,7 @@ export const latestArticles: Article[] = [
     author: 'By Jane Doe', 
     date: 'Mar 13, 2024', 
     readTime: '7-min read', 
-    imageUrl: 'https://placehold.co/600x400/65A30D/ffffff?text=Mindfulness' 
+    imageUrl: '/images/daily.jpg' 
   },
   { 
     id: 6, 
@@ -82,7 +82,7 @@ export const latestArticles: Article[] = [
     author: 'By Chef Leo', 
     date: 'Nov 11, 2024', 
     readTime: '6-min read', 
-    imageUrl: 'https://placehold.co/600x400/EA580C/ffffff?text=Pasta' 
+    imageUrl: '/images/pasta.jpg' 
   },
   { 
     id: 7, 
@@ -92,7 +92,7 @@ export const latestArticles: Article[] = [
     author: 'By Mia Jones', 
     date: 'Oct 20, 2024', 
     readTime: '8-min read', 
-    imageUrl: 'https://placehold.co/600x400/0EA5E9/ffffff?text=Europe+Travel' 
+    imageUrl: '/images/europe.jpg' 
   },
   { 
     id: 8, 
@@ -103,7 +103,7 @@ export const latestArticles: Article[] = [
     author: 'By Tom Smith', 
     date: 'Dec 01, 2024', 
     readTime: '9-min read', 
-    imageUrl: 'https://placehold.co/600x400/059669/ffffff?text=Finance' 
+    imageUrl: '/images/investment.jpg' 
   },
   { 
     id: 9, 
@@ -114,6 +114,6 @@ export const latestArticles: Article[] = [
     author: 'By Max Power', 
     date: 'Jan 15, 2025', 
     readTime: '10-min read', 
-    imageUrl: 'https://placehold.co/600x400/7C3AED/ffffff?text=VR+Gaming' 
+    imageUrl: '/images/vr-gaming.jpg' 
   },
 ];

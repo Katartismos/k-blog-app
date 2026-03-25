@@ -59,7 +59,7 @@ const FeaturedArticleCard: React.FC<FeaturedArticleProps> = ({ article, index })
         height={200}
       />
       <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 to-transparent p-6 flex flex-col justify-end">
-        <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full text-white mb-2 ${categoryColor}`}>
+        <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full text-white mb-2 text-center ${categoryColor}`}>
           {article.category}
         </span>
         <h3 className="text-xl font-bold text-white mb-2 line-clamp-2">{title}</h3>

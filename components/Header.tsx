@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react';
+import Link from 'next/link';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Search, PenSquare, ChevronDown, Rss, Menu, X } from 'lucide-react'; 
@@ -12,29 +13,21 @@ const Header = () => {
 
   useGSAP(() => {
     // Animation for Header container (fades down slightly)
-    gsap.from(headerRef.current, { 
-      y: -50, 
-      opacity: 0, 
-      duration: 0.8, 
-      ease: "power3.out" 
-    });
+    gsap.fromTo(headerRef.current, 
+      { y: -50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", clearProps: "all" }
+    );
     
     // Stagger the logo and nav items for a professional feel
-    gsap.from(logoRef.current, { 
-      x: -20, 
-      opacity: 0, 
-      duration: 0.5, 
-      delay: 0.3 
-    });
+    gsap.fromTo(logoRef.current, 
+      { x: -20, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.5, delay: 0.3, clearProps: "all" }
+    );
 
-    gsap.from(".nav-item", {
-      y: -10,
-      opacity: 0,
-      duration: 0.4,
-      stagger: 0.1,
-      delay: 0.5,
-      ease: "back.out(1.7)"
-    });
+    gsap.fromTo(".nav-item", 
+      { y: -10, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.5, ease: "back.out(1.7)", clearProps: "all" }
+    );
 
   }, { scope: headerRef });
 
@@ -59,13 +52,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
-              <a 
+              <Link 
                 key={item.name}
                 href={item.href} 
                 className="nav-item text-sm font-semibold text-gray-600 hover:text-indigo-600 transition flex items-center"
               >
                 {item.name} {item.icon}
-              </a>
+              </Link>
             ))}
             {/* Search Bar */}
             <div className="nav-item relative">
@@ -80,10 +73,10 @@ const Header = () => {
 
           {/* Actions & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <button className="nav-item hidden sm:flex items-center space-x-2 bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:bg-indigo-700 transition">
+            <Link href="/new" className="nav-item hidden sm:flex items-center space-x-2 bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:bg-indigo-700 transition">
               <PenSquare size={16} />
-              <span>Write a Post</span>
-            </button>
+              <span>Create a Post</span>
+            </Link>
             <div className="nav-item h-8 w-8 bg-gray-200 rounded-full cursor-pointer hidden lg:block"></div> {/* User Avatar */}
             
             <button 
@@ -100,14 +93,14 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full w-full bg-white shadow-xl p-4 transition-all duration-300">
           {navItems.map((item) => (
-            <a 
+            <Link 
               key={item.name}
               href={item.href} 
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           <div className="mt-4 border-t pt-4">
             <input 
@@ -115,10 +108,10 @@ const Header = () => {
               placeholder="Search articles..." 
               className="w-full p-2 border border-gray-300 rounded-md"
             />
-            <button className="mt-2 w-full flex justify-center items-center space-x-2 bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-full">
+            <Link href="/new" className="mt-2 w-full flex justify-center items-center space-x-2 bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-full" onClick={() => setIsMenuOpen(false)}>
               <PenSquare size={16} />
-              <span>Write a Post</span>
-            </button>
+              <span>Create a Post</span>
+            </Link>
           </div>
         </div>
       )}

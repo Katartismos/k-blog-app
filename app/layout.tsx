@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "K-Blog",
+  title: "K-Blog — The Modern Editor's Choice",
   description: "A modern blog platform",
   icons: {
     icon: '/newspaper.svg',

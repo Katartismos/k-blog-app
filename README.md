@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# K-Blog 📰
 
-## Getting Started
+K-Blog is a modern, high-performance blog platform built with the latest web technologies. It features a sleek, responsive design, a powerful rich-text editor, and seamless user authentication. Designed for creators who value both aesthetics and functionality, K-Blog provides a premium experience for writing and reading articles across various categories.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Dynamic Article Management**: Organize content across categories like Technology, Travel, Food, Lifestyle, Finance, and Gaming.
+-   **Rich Text Editing**: Integrated **Tiptap** editor for a smooth, feature-rich blogging experience.
+-   **Smooth UI Animations**: Powered by **GSAP** for fluid transitions and a premium feel.
+-   **Full-Stack Power**: Built with **Next.js 16 (App Router)** for optimized performance and SEO.
+-   **Secure Authentication**: Integrated **Auth.js (NextAuth v5)** with Google OAuth provider support.
+-   **Scalable Database**: Uses **MongoDB** and **Mongoose** for robust data persistence.
+-   **Responsive Design**: Crafted with **Tailwind CSS** for a perfect look on any device.
+
+## 🚀 Tech Stack
+
+-   **Framework**: [Next.js 16](https://nextjs.org/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Database**: [MongoDB](https://www.mongodb.com/) / [Mongoose](https://mongoosejs.com/)
+-   **Authentication**: [Auth.js (NextAuth.js v5)](https://authjs.dev/)
+-   **Editor**: [Tiptap](https://tiptap.dev/)
+-   **Animations**: [GSAP](https://gsap.com/)
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+-   Node.js 18+ (Node 20+ recommended)
+-   MongoDB instance (Local or Atlas)
+-   Google Cloud Console credentials (for OAuth)
+
+### Installation
+
+1.  **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd blog-app
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables**:
+    Create a `.env.local` file in the root directory and add the following:
+    ```env
+    MONGODB_URI=your_mongodb_connection_string
+    AUTH_SECRET=your_auth_js_secret
+    AUTH_GOOGLE_ID=your_google_client_id
+    AUTH_GOOGLE_SECRET=your_google_client_secret
+    ```
+
+4.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   `app/`: Contains the main application routes, layouts, and server actions.
+-   `components/`: Reusable UI components including the Tiptap editor and GSAP transitions.
+-   `lib/`: Database configuration, Mongoose models, and utility constants.
+-   `public/`: Static assets like icons and images.
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
